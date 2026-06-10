@@ -5,7 +5,7 @@ let currentMajor = localStorage.getItem('ow_currentMajor') ? parseInt(localStora
 let currentSub = localStorage.getItem('ow_currentSub') ? parseInt(localStorage.getItem('ow_currentSub')) : 1;   // 5 是最低
 
 // 定义守望先锋的 8 个大段位
-const majorRanks = ["Bronze", "Silver", "Gold", "Plat", "Diamond", "Master", "GM", "Champion"];
+const majorRanks = ["青铜", "白银", "黄金", "铂金", "钻石", "大师", "宗师", "英杰"];
 
 // 封装一个统一的更新显示并保存数据的函数
 function updateDisplayAndSave() {
@@ -81,7 +81,7 @@ function connectWebSocket() {
     const ws = new WebSocket('ws://localhost:8765');
 
     ws.onopen = () => {
-        console.log("Connection Succesful");
+        console.log("已成功连接到快捷键后台服务");
     };
 
     ws.onmessage = (event) => {
