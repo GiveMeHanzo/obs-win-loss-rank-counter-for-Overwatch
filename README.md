@@ -10,7 +10,7 @@ Usage of the **OBS Win/Loss Counter With Overwatch Rank and Remote Control **
 - Use **"Interact"** option **below the preview** in order to control the counter.
 
 - ***Remote Control Via Mobile phone***
-- Python Installation is Required for Remote Control Feature
+- Python Installation is Required for Remote Control Feature https://www.python.org/downloads/windows/
 - Use CMD or PowerShell and run the command below to install websockets
 - pip install websockets
 - Start Server.py and keep it running while streaming
