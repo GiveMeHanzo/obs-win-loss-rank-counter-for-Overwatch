@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index-style.css">
     <link rel="icon" href="assets/hs.jpg">
-    <title>Win/Lose Counter</title>
+    <title>Win/Lose Counter with Rank</title>
 </head>
 <body>
     <div class="counter-area" id="counter-area">
@@ -22,21 +22,30 @@
                     0
                 </div>
             </span>
+            <span>
+                <p class="rank-text">Rank:</p>
+                <div class="rank" id="rank-display">
+                    Plat 1
+                </div>
+            </span>
         </div>
     </div>
     <div class="controls-wrapper">
-        <p>Don't forget to crop out the excess space in OBS!</p>
         <div class="button-wrapper">
             <span>
                 <button class="add-win" onclick='handleButtonPress("win+")'>Win +</button>
                 <button class="add-win" onclick='handleButtonPress("win-")'>Win -</button>
             </span>
             <span>
-                <button class="add-lose" onclick='handleButtonPress("lose+")'>Lose +</button>
-                <button class="add-lose" onclick='handleButtonPress("lose-")'>Lose -</button>
+                <button class="add-lose" onclick='handleButtonPress("lose+")'>Loss +</button>
+                <button class="add-lose" onclick='handleButtonPress("lose-")'>Loss -</button>
+            </span>
+            <span>
+                <button class="add-rank" onclick='handleButtonPress("rank+")'>Rank +</button>
+                <button class="add-rank" onclick='handleButtonPress("rank-")'>Rank -</button>
             </span>
             <span class="clear-span">
-                <button class="clear" onclick='handleButtonPress("clear")'>Clear</button>
+                <button class="clear" onclick='handleButtonPress("clear")'>Reset</button>
             </span>
         </div>
     </div>
