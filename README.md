@@ -1,19 +1,17 @@
 Usage of the **OBS Win/Loss Counter With Overwatch Rank and Remote Control **
 
 **USAGE:**
-- Click Add a new **Source** in OBS and select **Browser**.
-- **Open the File** *(index.html)* in Your browser and **Copy the URL** *(It should look something like that "C:/User/folder-name/obs-win-loss-counter/inedx.html")*.
-- **Paste** in the **URL** into the **OBS**.
-- Set **Width/Height** preferably to **800x500** to avoid potential issues with scaling.
-- Click **"OK"**
-- **Crop out the excess space** by aiming at the edge of the source, pressing **(ALT + Mouse-Left-Button)** and moving Your mouse.
-- Use **"Interact"** option **below the preview** in order to control the counter.
+- OBS里添加浏览器源
+- 添加inedx.html  （其他文件也要下载）
+- 浏览器窗口设置**800x500** 
+- 裁切掉所有按钮，只保留上面的胜负场和分段
+- OBS界面选择浏览器源后在小窗口里点交互按钮可以修改胜负场和分段
 
-- ***Remote Control Via Mobile phone***
-- Python Installation is Required for Remote Control Feature https://www.python.org/downloads/windows/
-- Use CMD or PowerShell and run the command below to install websockets
-- pip install websockets
-- Start Server.py and keep it running while streaming
-- Make Sure your Phone and PC is under the same local network or WiFi
-- Type the link shown in the CMD window in your phone's browser  For example (http://192.168.x.x:8000/remote.html）
-- Use Your Phone to change Wins/Losses and Rank without the need to alt-tab from the game.
+***手机遥控功能***
+-首先需要确保电脑上安装了 Python。官网地址 https://www.python.org/downloads/windows/     下载64bit版本
+-打开电脑的命令行（CMD 或 PowerShell），输入以下命令安装所需的库：
+-pip install websockets
+-在工具文件夹中双击运行 server.py，直播期间不要关闭这个。
+-黑色控制台弹出来后，它会自动显示一串网址（例如 http://192.168.x.x:8000/remote.html）。
+-确保你的手机和电脑连接在同一个路由器/WiFi下。
+-在手机浏览器里输入那串网址，你就会看到专属的控制面板，且状态显示为“🟢 已连接到 OBS”。
