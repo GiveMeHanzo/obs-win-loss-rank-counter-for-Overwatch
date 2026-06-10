@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>OBS Remote Counter</title>
+    <title>OBS 胜负控制台</title>
     <style>
         body { 
             background: rgb(15, 17, 21); color: white; font-family: sans-serif; 
@@ -28,17 +28,17 @@
     </style>
 </head>
 <body>
-    <h2>🎮 Remote Control</h2>
-    <div id="status">🟡 Connecting...</div>
+    <h2>🎮 手机控制台</h2>
+    <div id="status">🟡 正在连接电脑...</div>
 
     <div class="grid" id="controls" style="opacity: 0.3; pointer-events: none;">
-        <button class="win" onclick="sendCmd('win+')">Win +</button>
-        <button class="win" onclick="sendCmd('win-')">Win -</button>
-        <button class="lose" onclick="sendCmd('lose+')">Loss +</button>
-        <button class="lose" onclick="sendCmd('lose-')">Loss -</button>
-        <button class="rank" onclick="sendCmd('rank+')">Rank +</button>
-        <button class="rank" onclick="sendCmd('rank-')">Rank -</button>
-        <button class="clear" onclick="sendCmd('clear')">Reset</button>
+        <button class="win" onclick="sendCmd('win+')">胜 +</button>
+        <button class="win" onclick="sendCmd('win-')">胜 -</button>
+        <button class="lose" onclick="sendCmd('lose+')">败 +</button>
+        <button class="lose" onclick="sendCmd('lose-')">败 -</button>
+        <button class="rank" onclick="sendCmd('rank+')">段位 +</button>
+        <button class="rank" onclick="sendCmd('rank-')">段位 -</button>
+        <button class="clear" onclick="sendCmd('clear')">清空胜负</button>
     </div>
 
     <script>
@@ -47,21 +47,21 @@
             // 自动获取电脑的局域网 IP
             const ip = window.location.hostname;
             if (!ip) {
-                document.getElementById('status').innerText = '🔴 Please Connect Via LAN IP';
+                document.getElementById('status').innerText = '🔴 请通过局域网IP访问此页面';
                 return;
             }
 
             ws = new WebSocket('ws://' + ip + ':8765');
 
             ws.onopen = () => {
-                document.getElementById('status').innerHTML = '🟢 Connected to OBS';
+                document.getElementById('status').innerHTML = '🟢 已连接到 OBS';
                 document.getElementById('status').style.color = '#00ff55';
                 document.getElementById('controls').style.opacity = '1';
                 document.getElementById('controls').style.pointerEvents = 'auto';
             };
             
             ws.onclose = () => {
-                document.getElementById('status').innerHTML = '🔴 Disconnected, Retrying...';
+                document.getElementById('status').innerHTML = '🔴 连接已断开，尝试重连...';
                 document.getElementById('status').style.color = '#ff3333';
                 document.getElementById('controls').style.opacity = '0.3';
                 document.getElementById('controls').style.pointerEvents = 'none';
