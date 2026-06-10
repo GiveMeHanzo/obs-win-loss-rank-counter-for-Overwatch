@@ -50,9 +50,9 @@ async def main():
 
     local_ip = get_local_ip()
     print("\n" + "="*50)
-    print("✨ OBS Remote Counter Server ✨")
-    print(f"【Important!】Make Sure Your Phone and PC Under the Same Local Network or WiFi")
-    print(f"          Open The Link Below in Your Phone's Browser:")
+    print("✨ OBS 遥控计分后台已成功启动 ✨")
+    print(f"【控制方式】请确保手机和电脑连着同一个 WiFi")
+    print(f"          用手机浏览器打开以下网址:")
     print(f"          http://{local_ip}:8000/remote.html")
     print("="*50 + "\n")
 
